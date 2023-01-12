@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Javaweb-Maven" />
+    <file type="web" url="file://$PROJECT_DIR$/javaweb-servlet/response" />
+    <file type="web" url="file://$PROJECT_DIR$/javaweb-servlet/servlet-01" />
+    <file type="web" url="file://$PROJECT_DIR$/javaweb-servlet/servlet-02" />
+    <file type="web" url="file://$PROJECT_DIR$/javaweb-session-cookie" />
+    <file type="web" url="file://$PROJECT_DIR$/SMBMS" />
+    <file type="web" url="file://$PROJECT_DIR$/功能扩展/file" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Javaweb-Maven/pom.xml" />
+        <option value="$PROJECT_DIR$/javaweb-servlet/servlet-01/pom.xml" />
+        <option value="$PROJECT_DIR$/javaweb-servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/SMBMS/pom.xml" />
+        <option value="$PROJECT_DIR$/javaweb-session-cookie/pom.xml" />
+        <option value="$PROJECT_DIR$/功能扩展/file/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="16" project-jdk-type="JavaSDK" />
+</project>

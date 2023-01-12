@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="request" />
+        <module name="file" />
+        <module name="response" />
+        <module name="servlet-02" />
+        <module name="Javaweb-Maven" />
+        <module name="servlet-01" />
+        <module name="SMBMS" />
+        <module name="javaweb-session-cookie" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="file" target="16" />
+      <module name="Javaweb-Maven" target="1.7" />
+      <module name="javaweb-servlet" target="1.8" />
+      <module name="javaweb-session-cookie" target="16" />
+      <module name="request" target="16" />
+      <module name="response" target="1.7" />
+      <module name="servlet-01" target="1.7" />
+      <module name="servlet-02" target="1.7" />
+      <module name="SMBMS" target="16" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

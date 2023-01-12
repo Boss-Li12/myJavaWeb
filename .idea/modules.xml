@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaWeb.iml" filepath="$PROJECT_DIR$/.idea/JavaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Javaweb-Maven/Javaweb-Maven.iml" filepath="$PROJECT_DIR$/Javaweb-Maven/Javaweb-Maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SMBMS/SMBMS.iml" filepath="$PROJECT_DIR$/SMBMS/SMBMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/功能扩展/file/file.iml" filepath="$PROJECT_DIR$/功能扩展/file/file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" filepath="$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-session-cookie/javaweb-session-cookie.iml" filepath="$PROJECT_DIR$/javaweb-session-cookie/javaweb-session-cookie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/request/request.iml" filepath="$PROJECT_DIR$/javaweb-servlet/request/request.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/response/response.iml" filepath="$PROJECT_DIR$/javaweb-servlet/response/response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/servlet-01/servlet-01.iml" filepath="$PROJECT_DIR$/javaweb-servlet/servlet-01/servlet-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/servlet-02/servlet-02.iml" filepath="$PROJECT_DIR$/javaweb-servlet/servlet-02/servlet-02.iml" />
+    </modules>
+  </component>
+</project>
