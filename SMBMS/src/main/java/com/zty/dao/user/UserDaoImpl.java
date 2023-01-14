@@ -24,7 +24,8 @@ public class UserDaoImpl implements UserDao {
             Object[] params = {userCode};
            //System.out.println(userPassword);
             rs = BaseDao.execute(connection, pstm, rs, sql, params);
-            if (rs.next()){
+            if (rs.next()){ // 如果有结果
+                // 下面把resultset的结果赋值到一个user实例
                 user = new User();
                 user.setId(rs.getInt("id"));
                 user.setUserCode(rs.getString("userCode"));
@@ -40,12 +41,14 @@ public class UserDaoImpl implements UserDao {
                 user.setModifyBy(rs.getInt("modifyBy"));
                 user.setModifyDate(rs.getTimestamp("modifyDate"));
 
-                BaseDao.closeResource(null, null,rs);
+                BaseDao.closeResource(null, pstm,rs);
+                // 密码匹配!
                 if (!user.getUserPassword().equals(userPassword)){
                     user=null;
                 }
             }
         }
+        // user返回null就是没找到！
         return user;
     }
 
@@ -59,7 +62,7 @@ public class UserDaoImpl implements UserDao {
             execute = BaseDao.execute(connection, pstm, sql, params);
             BaseDao.closeResource(null,pstm,null);
         }
-
+        // execute > 0成功！
         return execute;
     }
 
@@ -86,6 +89,7 @@ public class UserDaoImpl implements UserDao {
             }
 
             //怎么把List转换为数组
+            // list.toArray(), Arrays.toList()
             Object[] params = list.toArray();
 
             System.out.println("UserDaoImpl->getUserCount:"+sql.toString()); //输出最后完整的SQL语句
@@ -108,8 +112,10 @@ public class UserDaoImpl implements UserDao {
         List<User> userList = new ArrayList<User>();
         if(connection != null){
             StringBuffer sql = new StringBuffer();
+            // 联表查询
             sql.append("select u.*,r.roleName as userRoleName from smbms_user u,smbms_role r where u.userRole = r.id");
             List<Object> list = new ArrayList<Object>();
+            // 动态sql用if拼接
             if(!StringUtils.isNullOrEmpty(userName)){
                 sql.append(" and u.userName like ? ");
                 list.add("%"+userName+"%");
@@ -118,6 +124,8 @@ public class UserDaoImpl implements UserDao {
                 sql.append(" and u.userRole = ? ");
                 list.add(userRole);
             }
+            // 分页查询
+            // 开始的位置，搜索的长度
             sql.append(" order by creationDate DESC limit ?,? ");
             currentPageNo = (currentPageNo-1)*pageSize;
             list.add(currentPageNo);
@@ -183,6 +191,7 @@ public class UserDaoImpl implements UserDao {
         PreparedStatement pstm = null;
         ResultSet rs = null;
         if(null != connection){
+            // 只需要放一个参数
             String sql = "select u.*,r.roleName as userRoleName from smbms_user u,smbms_role r where u.id=? and u.userRole = r.id";
             Object[] params = {id};
             rs = BaseDao.execute(connection, pstm, rs, sql, params);
@@ -193,11 +202,13 @@ public class UserDaoImpl implements UserDao {
                 user.setUserName(rs.getString("userName"));
                 user.setUserPassword(rs.getString("userPassword"));
                 user.setGender(rs.getInt("gender"));
+                // 日期转换
                 user.setBirthday(rs.getDate("birthday"));
                 user.setPhone(rs.getString("phone"));
                 user.setAddress(rs.getString("address"));
                 user.setUserRole(rs.getInt("userRole"));
                 user.setCreatedBy(rs.getInt("createdBy"));
+                // 时间戳转换
                 user.setCreationDate(rs.getTimestamp("creationDate"));
                 user.setModifyBy(rs.getInt("modifyBy"));
                 user.setModifyDate(rs.getTimestamp("modifyDate"));
@@ -211,6 +222,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public int modify(Connection connection, User user) throws Exception {
         // TODO Auto-generated method stub
+        // anyway：就是sql + 参数，用basedao搞一下！
         int flag = 0;
         PreparedStatement pstm = null;
         if(null != connection){
